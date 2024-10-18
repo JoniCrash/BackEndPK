@@ -28,9 +28,9 @@
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a> -->
-            <ul class="nav nav-treeview">
+            <!-- <ul class="nav nav-treeview"> -->
               <li class="nav-item">
-                <a href="index.php?page=data-pelanggan" class="nav-link active">
+                <a href="index.php?page=data-pelanggan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pelanggan</p>
                 </a>
@@ -53,7 +53,7 @@
                   <p>Pembayaran</p>
                 </a>
               </li>
-            </ul>
+            <!-- </ul> -->
           </li>
 
           <li class="nav-item">

@@ -27,7 +27,7 @@
                   <tbody>
                     <?php
                     $no = 0; 
-                    $query = mysqli_query($koneksi, "SELECT * FROM paket");
+                    $query = mysqli_query($koneksi, "SELECT * FROM tb_paket");
                     while($mhs = mysqli_fetch_array($query)){
                       $no++
                     ?>

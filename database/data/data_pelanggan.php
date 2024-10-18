@@ -24,7 +24,7 @@
                   <tbody>
                     <?php
                     $no = 0; 
-                    $query = mysqli_query($koneksi, "SELECT id_pelanggan,Nama_Lengkap,Nomor HP1 FROM tb_pelanggan");
+                    $query = mysqli_query($koneksi, "SELECT * WHERE id_pelanggan,Nama_Lengkap,Nomor_HP FROM tb_pelanggan");
                     while($mhs = mysqli_fetch_array($query)){
                       $no++
                     ?>
