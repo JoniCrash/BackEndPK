@@ -6,7 +6,7 @@
             <div class="card">
 
               <div class="card-header">
-                <h3 class="card-title">Data Pelanggan</h3>
+                <h3 class="card-title">Data Paket</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -18,16 +18,16 @@
                   <thead>
                   <tr>
                     <th>No</th>
-                    <th>Nama</th>
-                    <th>Nim</th>
-                    <th>Semester</th>
-                    <th>Action</th>
+                    <th>Id Pelanggan</th>
+                    <th>Paket</th>
+                    <!-- <th>Semester</th>
+                    <th>Action</th> -->
                   </tr>
                   </thead>
                   <tbody>
                     <?php
                     $no = 0; 
-                    $query = mysqli_query($koneksi, "SELECT * FROM tb_mahasiswa");
+                    $query = mysqli_query($koneksi, "SELECT * FROM paket");
                     while($mhs = mysqli_fetch_array($query)){
                       $no++
                     ?>

@@ -11,7 +11,7 @@ include('../conf/config.php');
 <div class="wrapper">
 
   <!-- Preloader -->
-<!-- <?php include('preloader.php');?> -->
+<?php include('preloader.php');?>
 
   <!-- Navbar -->
   <?php include('navbar.php');?>
@@ -38,8 +38,10 @@ if (isset($_GET['page'])){
     include('content-header/content_header_user_app.php');
   }elseif($_GET['page']=='data-pelanggan'){
     include('content-header/content_header_pelanggan.php');
-  }elseif($_GET['page']=='pengajuan'){
+  }elseif($_GET['page']=='data_pengajuan'){
     include('content-header/content_header_pengajuan.php');
+  }elseif($_GET['page']=='data_pembayaran'){
+    include('content-header/content_header_pembayaran.php');
   }else{
     include('content-header/content_header_dashboard.php');
   }
@@ -58,13 +60,15 @@ if (isset($_GET['page'])){
   }else if($_GET['page']=='data-pelanggan'){
     include('data_pelanggan.php');
   }else if($_GET['page']=='data-paket'){
-    include('data_paket.php');
+    include('../database/data/data_paket.php');
   }else if($_GET['page']=='data-pengajuan'){
-    include('data_pengajuan.php');
+    include('../database/data/data_pengajuan.php');
   }else if($_GET['page']=='user-app'){
-    include('user_app.php');
+    include('../database/user/user_app.php');
   }else if($_GET['page']=='edit-data'){
     include('edit/edit_data.php');
+  }else if($_GET['page']=='data_pembayaran'){
+    include('../database/data/data_pembayaran.php');
   }else{
     include('not-found.php');
   }

@@ -11,7 +11,7 @@
               <!-- /.card-header -->
               <div class="card-body">
               <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-lg">
-                  Tambah Data
+                  Tambah User
                 </button>
                 <br></br>
                 <table id="example1" class="table table-bordered table-striped">
