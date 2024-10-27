@@ -64,13 +64,13 @@
     <!-- /.content -->
       <Script>
         function hapus_data(data_id){
-          //alert("Data berhasil dihapus");
-          //window.location=("delete/hapus_data.php?id="+data_id);
-          // Swal.fire(
-          //   'Hapus Data',
-          //   'Data berhasil dihapus',
-          //  'success'
-          // )
+          alert("Data berhasil dihapus");
+          window.location=("delete/hapus_data.php?id="+data_id);
+          Swal.fire(
+            'Hapus Data',
+            'Data berhasil dihapus',
+           'success'
+          )
           Swal.fire({
   title: 'Apakah anda yakin ingin menghapus data?',
   //showDenyButton: false,

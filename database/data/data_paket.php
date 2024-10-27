@@ -20,12 +20,11 @@
                     <th>No</th>
                     <th>Id Pelanggan</th>
                     <th>Paket</th>
-                    <!-- <th>Semester</th>
-                    <th>Action</th> -->
+                    <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
-                    <?php
+                  <?php
                     $no = 0; 
                     $query = mysqli_query($koneksi, "SELECT * FROM tb_paket");
                     while($mhs = mysqli_fetch_array($query)){
@@ -33,12 +32,11 @@
                     ?>
                   <tr>
                     <td width = 5%><?php echo $no?></td>
-                    <td><?php echo $mhs ['nama'];?></td>
-                    <td><?php echo $mhs ['nim'];?></td>
-                    <td><?php echo $mhs ['semester'];?></td>
+                    <td><?php echo $mhs ['id_pelanggan'];?></td>
+                    <td><?php echo $mhs ['paket'];?></td>
                     <td>
                       <a onclick="hapus_data(<?php echo $mhs ['id'];?>)" class="btn btn-sm btn-danger">Hapus</a>
-                      <a href="index.php?page=edit-data&&id=<?php echo $mhs ['id'];?>" class="btn btn-sm btn-success">Edit</a>
+                      <!-- <a href="index.php?page=edit-data&&id=<?php echo $mhs ['id'];?>" class="btn btn-sm btn-success">Edit</a> -->
                     </td>
                   </tr>
                   <?php }?>
@@ -78,35 +76,15 @@
             <div class="modal-body">
               
                 <div class="form-group">
-                  <label class="control-label col-sm-2" for="email">Nama:</label>
+                  <label class="control-label col-sm-2" for="username">Nama Lengkap:</label>
                   <div class="col-sm-10">
-                    <input type="text" name = "nama" class="form-control" id="email" placeholder="Masukan nama" required >
+                    <input type="text" name = "username" class="form-control" id="username" placeholder="Masukan username" required >
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="control-label col-sm-2" for="email">Nim:</label>
-                  <div class="col-sm-10">
-                    <input type="text" name = "nim" class="form-control" id="email" placeholder="Masukan nim" required>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label >Semester:</label>
-                    <select class="form-select" name = "semester" required>
-                    <option selected>Pilih</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <div class="checkbox">
-                      <label><input type="checkbox"> Remember me</label>
-                    </div>
-                  </div>
-                </div>
+
+
+
+
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default">Submit</button>
