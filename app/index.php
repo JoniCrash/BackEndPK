@@ -42,6 +42,8 @@ if (isset($_GET['page'])){
     include('content-header/content_header_pengajuan.php');
   }elseif($_GET['page']=='data-pembayaran'){
     include('content-header/content_header_pembayaran.php');
+  }elseif($_GET['page']=='profil-pelanggan'){
+    include('content-header/content_header_profil_pelanggan.php');
   }else{
     include('content-header/content_header_dashboard.php');
   }
@@ -69,6 +71,8 @@ if (isset($_GET['page'])){
     include('edit/edit_data.php');
   }else if($_GET['page']=='data-pembayaran'){
     include('../database/data/data_pembayaran.php');
+  }else if($_GET['page']=='profil-pelanggan'){
+    include('../database/data/profil_pelanggan.php');
   }else{
     include('not-found.php');
   }

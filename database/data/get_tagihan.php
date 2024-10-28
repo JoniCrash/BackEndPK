@@ -26,5 +26,4 @@ header('Content-Type: application/json');
 echo json_encode($tagihanList);
 
 $stmt->close();
-$conn->close();
 ?>

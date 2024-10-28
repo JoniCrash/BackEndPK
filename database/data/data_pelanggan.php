@@ -30,12 +30,14 @@
                     ?>
                   <tr>
                     <td width = 5%><?php echo $no?></td>
-                    <td><?php echo $mhs ['id_pelanggan'];?></td>
-                    <td><?php echo $mhs ['nama'];?></td>
-                    <td><?php echo $mhs ['nomor_telepon'];?></td>
+                    <td><!-- <?php echo $mhs ['id_pelanggan'];?> -->
+                    <a href="index.php?page=profil-pelanggan"</a> <?php echo $mhs ['id_pelanggan'];?>
+                    </td>
+                    <td><?php echo $mhs ['Nama_Lengkap'];?></td>
+                    <td><?php echo $mhs ['Nomor_HP'];?></td>
                     <td>
-                      <a onclick="hapus_data(<?php echo $mhs ['id'];?>)" class="btn btn-sm btn-danger">Hapus</a>
-                      <a href="index.php?page=edit-data&&id=<?php echo $mhs ['id'];?>" class="btn btn-sm btn-success">Edit</a>
+                      <a onclick="hapus_data(<?php echo $mhs ['id_pelanggan'];?>)" class="btn btn-sm btn-danger">Hapus</a>
+                      <a href="index.php?page=edit-data&&id=<?php echo $mhs ['id_pelanggan'];?>" class="btn btn-sm btn-success">Edit</a>
                     </td>
                   </tr>
                   <?php }?>
