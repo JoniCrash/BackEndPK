@@ -18,13 +18,14 @@
                     <th>ID Pelanggan</th>
                     <th>Nama Lengkap</th>
                     <th>Nomor Telepon</th>
+                    <th>Status</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
                     <?php
                     $no = 0; 
-                    $query = mysqli_query($koneksi, "SELECT id_pelanggan, Nama_Lengkap, Nomor_HP FROM tb_pelanggan");
+                    $query = mysqli_query($koneksi, "SELECT id_pelanggan, Nama_Lengkap, Nomor_HP, status FROM tb_pelanggan");
                     while($mhs = mysqli_fetch_array($query)){
                       $no++
                     ?>
@@ -35,6 +36,13 @@
                     </td>
                     <td><?php echo $mhs ['Nama_Lengkap'];?></td>
                     <td><?php echo $mhs ['Nomor_HP'];?></td>
+                    <td>
+                     <!-- Toggle Switch untuk Status -->
+                    <select onchange="ubahStatus(<?php echo $mhs['id_pelanggan']; ?>, this.value)">
+                      <option value="1" <?php echo $mhs['status'] == '1' ? 'selected' : ''; ?>>Aktif</option>
+                      <option value="0" <?php echo $mhs['status'] == '0' ? 'selected' : ''; ?>>Nonaktif</option>
+                    </select>
+                  </td>
                     <td>
                       <a onclick="hapus_data(<?php echo $mhs ['id_pelanggan'];?>)" class="btn btn-sm btn-danger">Hapus</a>
                       <a href="index.php?page=edit-data&&id=<?php echo $mhs ['id_pelanggan'];?>" class="btn btn-sm btn-success">Edit</a>
@@ -49,6 +57,7 @@
                     <th>Platform(s)</th>
                     <th>Engine version</th>
                     <th>CSS grade</th>
+                    <th>action</th>
                   </tr>
                   </tfoot>
                 </table>
@@ -93,3 +102,25 @@
 })
         }
       </Script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  // Fungsi untuk Mengupdate Status
+  function ubahStatus(id_pelanggan, status) {
+  console.log("Mengirim status:", id_pelanggan, status); // Debug log untuk mengecek data yang dikirim
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "http://localhost/BackEndpk/database/data/update.php", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      console.log("Response:", xhr.responseText); // Log respons dari server untuk debugging
+      if (xhr.status === 200) {
+        Swal.fire('Berhasil!', 'Status berhasil diperbarui.', 'success');
+      } else {
+        Swal.fire('Gagal!', 'Tidak dapat memperbarui status.', 'error');
+      }
+    }
+  };
+  xhr.send("id_pelanggan=" + id_pelanggan + "&status=" + status);
+}
+
+</script>
